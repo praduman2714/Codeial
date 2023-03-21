@@ -11,6 +11,8 @@ const passportLocal  = require('./config/passport-local-strategy');
 //const mongoStore = require('connect-mongo'); // if you get error check here
 const MongoStore = require('connect-mongo');
 
+
+
 app.use(express.urlencoded()); 
 
 app.use(cookieParser());

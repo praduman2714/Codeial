@@ -10,7 +10,7 @@
   "keywords": [
     "social"
   ],
-  "author": "CodingNinjas",
+  "author": "whiteWolf",
   "license": "ISC",
   "dependencies": {
     "connect-mongo": "^5.0.0",

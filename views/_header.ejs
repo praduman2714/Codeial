@@ -1,27 +1,31 @@
+<link rel="stylesheet" href="/css/header.css">
 <header>
-    <ul>
+    <div class="heading">
+        <a href="/">COdeAl</a>
+    </div>
+    <div class="auth">
         <%if (locals.user) { %>
-            <li>
+            <div class="profile">
                 <a href="/users/profile">
                     <%= user.name%>
                 </a>
-            </li>
-            <li>
+            </div>
+            <div class="signOut">
                 <a href="/users/sign-out">Sign Out</a>
-            </li>
+            </div>
 
         <%} else {%>   
             
-            <li>
+            <div class="signIn">
                 <a href="/users/sign-in">SignIN</a>
-            </li>
+            </div>
 
-            <li>
+            <div class = "signUp">
                 <a href="/users/sign-up">SignUP</a>
-            </li>
+            </div>
 
          <%}%>   
-    </ul>
+    </div>
 
-    Page Header
+    <!-- Page Header -->
 </header>
