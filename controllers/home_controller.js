@@ -1,8 +1,13 @@
-module.exports.home = function(req, res){
-    console.log(req.cookies);
-    res.cookie('user_id', 25);
+const Post = require('../models/post');
+
+module.exports.home = async function(req, res){
+    // console.log(req.cookies);
+    // res.cookie('user_id', 25);
+    let post = await Post.find({}).populate('user');
+    console.log(post);
     return res.render('home', {
-        title: "Home"
+        title: "Codial | Home",
+        posts : post
     });
 }
 
