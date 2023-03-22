@@ -8,10 +8,12 @@
         Post
     </h4>
 
-    <form action="/posts/create" method="POST" id="new-post-id">
-        <textarea name="content" rows="3" cols="30" placeholder="Type Here..." ></textarea>
-        <input type="submit" value="Post">
-    </form>
+    <% if(locals.user) {%>
+        <form action="/posts/create" method="POST" id="new-post-id">
+            <textarea name="content" rows="3" cols="30" placeholder="Type Here..." ></textarea>
+            <input type="submit" value="Post">
+        </form>
+    <%}%>
 
     <div id="posts-list-container">
         <% for(post of posts) {%>
