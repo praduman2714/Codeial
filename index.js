@@ -12,7 +12,8 @@ const passportLocal  = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
-
+//make uploads part available to the broweser
+app.use('/uploads', express.static(__dirname + '/uploads'))
 
 app.use(express.urlencoded()); 
 
