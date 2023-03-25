@@ -21,16 +21,8 @@
     "express-ejs": "^2.0.0",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
-    "mongoose": "^7.0.2",
+    "mongoose": "^7.0.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/praduman2714/Codeial.git"
-  },
-  "bugs": {
-    "url": "https://github.com/praduman2714/Codeial/issues"
-  },
-  "homepage": "https://github.com/praduman2714/Codeial#readme"
+  }
 }
