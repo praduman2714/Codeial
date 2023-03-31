@@ -11,7 +11,7 @@ exports.newComment = (comment)=>{
         html : htmlString
     }, (err, info) =>{
         if(err){
-            console.log("**********" + err );
+            console.log("********** in this" + err );
             return ;
 
         }

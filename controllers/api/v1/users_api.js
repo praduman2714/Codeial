@@ -1,5 +1,6 @@
 const User = require('../../../models/user');
 const jwt = require('jsonwebtoken');
+const env = require('../../../config/enviroment');
 
 module.exports.createSession = async function(req, res){
     try{
@@ -15,7 +16,7 @@ module.exports.createSession = async function(req, res){
         return res.json(200, {
             message : 'Sign in Sussfull, keep your token safe with you',
             data : {
-                token : jwt.sign(user.toJSON(), 'codeial' )
+                token : jwt.sign(user.toJSON(), env.jwt_screate )
             }
         })
     }catch(err) {

@@ -1,4 +1,5 @@
 const express = require('express');
+const env = require('./config/enviroment');
 const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
@@ -15,13 +16,19 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 //make uploads part available to the broweser
-app.use('/uploads', express.static(__dirname + '/uploads'))
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
+// Set up the chat server
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listening on port 5000');
 
 app.use(express.urlencoded()); 
 
 app.use(cookieParser());
 
-app.use(express.static('./assets')); 
+app.use(express.static(env.asset_path)); 
 
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
@@ -39,7 +46,7 @@ app.set('views', './views');
 app.use(session({
     name: 'codeial',
     // TODO change the secret before deployment in production mode
-    secret: 'blahsomething',
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {
