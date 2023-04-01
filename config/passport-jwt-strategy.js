@@ -7,7 +7,7 @@ const env = require('../config/enviroment');
 
 // let opts = {
 //     jwtFromRequtest : ExtractJWT.fromAuthHeaderAsBearerToken,
-//     secretOrKey : 'codial'
+//     secretOrKey : 'codeial'
 // }
 
 let opts = {}
